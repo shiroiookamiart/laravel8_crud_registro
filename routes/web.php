@@ -25,4 +25,4 @@ Route::get('/list-compras', [App\Http\Controllers\HomeController::class, 'listCo
 Route::get('/imprimir/{id}', [App\Http\Controllers\HomeController::class, 'listFacturas'])->name('listFacturas');
 Route::get('/generar-factura/{id}', [App\Http\Controllers\HomeController::class, 'genFactura'])->name('genFactura');
 
-Route::get("/facturas-no-generadas", [App\Http\Controllers\AdminController::class, 'facturas'])->name('facturas');
+Route::get("/facturas", [App\Http\Controllers\AdminController::class, 'facturas'])->name('facturas');

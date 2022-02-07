@@ -15,7 +15,6 @@ class Compra extends Model
         'users_id',
         'producto_id',
         'cantidad',
-        'iva_id',
         'total',
     ];
 }

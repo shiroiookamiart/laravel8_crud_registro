@@ -18,10 +18,7 @@ class Compra extends Migration
             $table->foreignId('users_id');
             $table->foreignId('producto_id');
             $table->integer('cantidad')->nullable();
-            $table->foreignId('iva_id');
             $table->float('total')->nullable();
-
-
             $table->timestamps();
         });
     }

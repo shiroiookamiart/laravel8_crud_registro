@@ -17,6 +17,7 @@ class Producto extends Migration
             $table->id();
             $table->string('nombre')->nullable();
             $table->integer('cantidad')->nullable();
+            $table->integer("iva");
             $table->float('valor')->nullable();
             $table->timestamps();
         });

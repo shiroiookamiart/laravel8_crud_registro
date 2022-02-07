@@ -18,8 +18,7 @@ class AdminController extends Controller
         $sql = Factura::join("compra as c", "c.id", "factura.compra_id")
                         ->join("producto as p", "p.id", "c.producto_id")
                         ->join("users as u", "u.id", "c.users_id")
-                        ->join("iva as i", "i.id", "c.iva_id")
-                        ->select("factura.estatus", "u.name as nombre", "p.nombre as n_producto", "p.valor as p_valor","c.*", "i.valor as iva")
+                        ->select("factura.estatus", "u.name as nombre", "p.nombre as n_producto", "p.valor as p_valor","c.*", "p.iva")
                         ->get();
 
         return view("app.list_facturas", compact("sql"));

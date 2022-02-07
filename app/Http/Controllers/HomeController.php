@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Producto;
-use App\Models\Iva;
 use App\Models\Compra;
 use App\Models\Factura;
 use Auth;
@@ -34,15 +33,13 @@ class HomeController extends Controller
 
     public function compra($id){
         $productos = Producto::where("id", $id)->first();
-        $iva = Iva::where("estatus", True)->first();
-        $total = ($productos->valor * $iva->valor) / 100;
+        $total = ($productos->valor * $productos->iva) / 100;
         $total_g =  $productos->valor + $total;
 
         $save = array(
         'users_id' => Auth::user()->id,
         'producto_id' => $id,
         'cantidad' => 1,
-        'iva_id' => $iva->id,
         'total' => $total_g);
 
         $alm = new Compra($save);
@@ -65,8 +62,7 @@ class HomeController extends Controller
         $sql = Compra::where("users_id", Auth::user()->id)
                         ->join("users as u", "u.id", "compra.users_id")
                         ->join("producto as p", "p.id", "compra.producto_id")
-                        ->join("iva as i", "i.id", "compra.iva_id")
-                        ->select("u.name as nombre", "p.nombre as n_producto", "p.valor as p_valor","compra.*", "i.valor as iva")
+                        ->select("u.name as nombre", "p.nombre as n_producto", "p.valor as p_valor","compra.*", "p.iva")
                         ->get();
         return view("app.compra", compact("sql"));
     }
@@ -75,8 +71,7 @@ class HomeController extends Controller
         $con = Compra::where("compra.id", $id)->where("users_id", Auth::user()->id)
         ->join("users as u", "u.id", "compra.users_id")
         ->join("producto as p", "p.id", "compra.producto_id")
-        ->join("iva as i", "i.id", "compra.iva_id")
-        ->select("u.name as nombre", "p.nombre as n_producto", "p.valor as p_valor","compra.*", "i.valor as iva")
+        ->select("u.name as nombre", "p.nombre as n_producto", "p.valor as p_valor","compra.*")
         ->first();
         return view("app.factura", compact("con"));
     }
