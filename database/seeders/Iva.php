@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-
-class Facturas extends Seeder
+use Illuminate\Support\Facades\DB;
+class Iva extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,6 +13,9 @@ class Facturas extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('iva')->insert([
+            'valor' => 20,
+            'estatus' => 1
+        ]);
     }
 }

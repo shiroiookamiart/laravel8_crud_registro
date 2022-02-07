@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Iva extends Migration
+class Compra extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,15 @@ class Iva extends Migration
      */
     public function up()
     {
-        Schema::create('ivas', function (Blueprint $table) {
+        Schema::create('compra', function (Blueprint $table) {
             $table->id();
-            $table->string('valor')->nullabled();
+            $table->foreignId('users_id');
+            $table->foreignId('producto_id');
+            $table->integer('cantidad')->nullable();
+            $table->foreignId('iva_id');
+            $table->float('total')->nullable();
+
+
             $table->timestamps();
         });
     }
@@ -27,6 +33,6 @@ class Iva extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ivas');
+        Schema::dropIfExists('compra');
     }
 }

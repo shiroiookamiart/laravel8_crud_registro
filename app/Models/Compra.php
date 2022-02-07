@@ -5,12 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Iva extends Model
+class Compra extends Model
 {
     use HasFactory;
-    protected $table = "iva";
+
+    protected $table = "compra";
+
     protected $fillable = [
+        'users_id',
+        'producto_id',
         'cantidad',
-        "estatus"
+        'iva_id',
+        'total',
     ];
 }

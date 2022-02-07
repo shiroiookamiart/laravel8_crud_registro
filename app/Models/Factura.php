@@ -5,7 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Productos extends Model
+class Factura extends Model
 {
     use HasFactory;
+
+    protected $table = "factura";
+
+    protected $fillable = [
+        'compra_id',
+        "estatus"
+    ];
 }

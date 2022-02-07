@@ -37,7 +37,7 @@ composer update
 ```
 
 cuando haya finalizado crea una base de datos en mysql con el nombre app
-luego ejecuta el siguiente comando
+luego ejecuta el siguiente comando dependiendo tu sistema operativo
 
 ### Windows
 
@@ -65,8 +65,26 @@ php artisan db:seed
 ```
 
 nos creara algunos registros de prueba.
-para finaalizar ejecuta
+ahora ejecuta
 
 ```
 php artisan serve
 ```
+
+y luego 
+
+```
+127.0.0.1:8000
+```
+
+hay dos usuarios en este pequeño ejemplo uno es
+
+user: admin@prueba.com
+pass: 123456
+
+y el cliente
+
+user: cliente@prueba.com
+pass: 123456
+
+puedes crearte un cliente en la parte de registro

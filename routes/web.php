@@ -13,10 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-})->middleware("auth");
+})->middleware("auth");*/
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/comprar/{id}', [App\Http\Controllers\HomeController::class, 'compra'])->name('compra');
+Route::get('/list-compras', [App\Http\Controllers\HomeController::class, 'listCompra'])->name('listCompra');
+Route::get('/imprimir/{id}', [App\Http\Controllers\HomeController::class, 'listFacturas'])->name('listFacturas');
+Route::get('/generar-factura/{id}', [App\Http\Controllers\HomeController::class, 'genFactura'])->name('genFactura');
+
+Route::get("/facturas-no-generadas", [App\Http\Controllers\AdminController::class, 'facturas'])->name('facturas');
