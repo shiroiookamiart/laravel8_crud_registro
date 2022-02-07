@@ -88,3 +88,9 @@ user: cliente@prueba.com
 pass: 123456
 
 puedes crearte un cliente en la parte de registro
+
+# Imagenes
+
+![Alt text](/public/img/login.png)
+![Alt text](/public/img/admin.png)
+![Alt text](/public/img/cliente.png)
