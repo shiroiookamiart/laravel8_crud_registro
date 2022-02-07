@@ -46,6 +46,7 @@
                     <td>impuesto</td>
                     <td>valor total</td>
                     <td>Estatus</td>
+                    <td>Acciones</td>
                 </tr>
                 @if(isset($sql))
                     @if(count($sql) > 0)
@@ -64,6 +65,7 @@
                                     No Generada
                                 @endif
                             </td>
+                            <td><a href="{{ url('/imprimir/'.$row->id) }}" class="btn btn-primary">Factura</a></td>
                         </tr>
                         @endforeach
                     @endif

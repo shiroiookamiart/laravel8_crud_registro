@@ -77,11 +77,19 @@ class HomeController extends Controller
     }
 
     public function listFacturas($id){
-        $con = Compra::where("compra.id", $id)->where("users_id", Auth::user()->id)
-        ->join("users as u", "u.id", "compra.users_id")
-        ->join("producto as p", "p.id", "compra.producto_id")
-        ->select("u.name as nombre", "p.nombre as n_producto", "p.valor as p_valor","compra.*")
-        ->first();
+        if(Auth::user()->rol == 1){
+            $con = Compra::where("compra.id", $id)
+                ->join("users as u", "u.id", "compra.users_id")
+                ->join("producto as p", "p.id", "compra.producto_id")
+                ->select("u.name as nombre", "p.nombre as n_producto", "p.valor as p_valor","compra.*")
+                ->first();
+        }else{
+            $con = Compra::where("compra.id", $id)->where("users_id", Auth::user()->id)
+                ->join("users as u", "u.id", "compra.users_id")
+                ->join("producto as p", "p.id", "compra.producto_id")
+                ->select("u.name as nombre", "p.nombre as n_producto", "p.valor as p_valor","compra.*")
+                ->first();
+        }    
         return view("app.factura", compact("con"));
     }
 

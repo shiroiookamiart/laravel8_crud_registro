@@ -24,7 +24,7 @@
                             <td>{{$row->p_valor}}</td>
                             <td>{{$row->iva}}%</td>
                             <td>{{$row->total}}</td>
-                            <td><a href="{{ url('/imprimir/'.$row->id) }}" class="btn btn-primary">Imprimir</a></td>
+                            <td><a href="{{ url('/imprimir/'.$row->id) }}" class="btn btn-primary">Factura</a></td>
                         </tr>
                         @endforeach
                     @endif
