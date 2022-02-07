@@ -6,3 +6,47 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
+
+#Crud Laravel 8 Factura
+
+ejemplo de  unsistema de factura usando laravel
+
+
+##Pre Requisitos
+
+Laravel 8+
+
+##Instalacion
+
+abre un terminal y Copia
+
+```
+https://github.com/shiroiokamiart/laravel8_crud_registro.git
+```
+
+una ves descargado ejecuta
+
+```
+cd laravel8_crud_registro
+```
+
+una ves dentro de la carpeta del proyecto ejecuta
+
+```
+composer update
+```
+
+cuando haya finalizado crea una base de datos en mysql con el nombre app
+luego ejecuta el siguiente comando
+
+###Windows
+
+```
+copy .env.example .env
+```
+
+###linux
+
+```
+cp .env.example .env
+```
