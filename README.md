@@ -21,7 +21,7 @@ Laravel 8+
 abre un terminal y Copia
 
 ```
-https://github.com/shiroiokamiart/laravel8_crud_registro.git
+git clone https://github.com/shiroiokamiart/laravel8_crud_registro.git
 ```
 
 una ves descargado ejecuta
