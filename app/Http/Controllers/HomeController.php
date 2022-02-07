@@ -27,7 +27,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $sql = Producto::where("cantidad", ">", 0)->get();
+        if(Auth::user()->rol == 1){
+            $sql = Factura::where("factura.estatus", true)
+                        ->join("compra as c", "c.id", "factura.compra_id")
+                        ->join("producto as p", "p.id", "c.producto_id")
+                        ->join("users as u", "u.id", "c.users_id")
+                        ->select("factura.estatus", "u.name as nombre", "p.nombre as n_producto", "p.valor as p_valor","c.*", "p.iva")
+                        ->get();
+        }else{
+            $sql = Producto::where("cantidad", ">", 0)->get();
+        }
         return view('app.index', compact('sql'));
     }
 
