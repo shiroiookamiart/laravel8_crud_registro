@@ -7,16 +7,16 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-#Crud Laravel 8 Factura
+# Crud Laravel 8 Factura
 
 ejemplo de  unsistema de factura usando laravel
 
 
-##Pre Requisitos
+## Pre Requisitos
 
 Laravel 8+
 
-##Instalacion
+## Instalacion
 
 abre un terminal y Copia
 
@@ -39,14 +39,34 @@ composer update
 cuando haya finalizado crea una base de datos en mysql con el nombre app
 luego ejecuta el siguiente comando
 
-###Windows
+### Windows
 
 ```
 copy .env.example .env
 ```
 
-###linux
+### linux
 
 ```
 cp .env.example .env
+```
+
+Una ves copiado el archivo .env ejecuta
+
+```
+php artisan migrate
+```
+
+este comando nos creara las tablas en la base de datos, cuando haya terminado
+ejecuta
+
+```
+php artisan db:seed
+```
+
+nos creara algunos registros de prueba.
+para finaalizar ejecuta
+
+```
+php artisan serve
 ```
