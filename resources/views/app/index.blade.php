@@ -16,7 +16,7 @@
                     <td>nombre</td>
                     <td>Precio</td>
                     <td>Impuesto</td>
-                    <td>precio con Impuesto</td>
+                    <td>precio mas Impuesto</td>
                     <td>Acciones</td>
                 </tr>
                 @if(isset($sql))

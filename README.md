@@ -15,6 +15,8 @@ ejemplo de  unsistema de factura usando laravel
 ## Pre Requisitos
 
 Laravel 8+
+Git
+Mysql
 
 ## Instalacion
 
