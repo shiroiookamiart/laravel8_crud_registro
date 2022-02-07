@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class Productos extends Seeder
 {
@@ -14,13 +15,13 @@ class Productos extends Seeder
     public function run()
     {
         DB::table('productos')->insert([
-            'name' => "PC",
+            'nombre' => "PC",
             'cantidad' => 50,
             'valor' => 1200,
         ]);
 
         DB::table('productos')->insert([
-            'name' => "Laptop",
+            'nombre' => "Laptop",
             'cantidad' => 3,
             'valor' => 2500,
         ]);
